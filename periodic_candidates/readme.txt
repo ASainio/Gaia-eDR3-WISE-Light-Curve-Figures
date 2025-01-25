@@ -11,4 +11,4 @@ Source_id, note
 
 ADDED 1/2025: 
 2150788814314276736 Period 0.0741d. SPT of the primary is unkown. WD PWD=0.08, but this might be because multiplicity. Listed as LPV with 127d period by ZTF. 
-W1-w2 > 0.4 W1 ~15.5mag W2~15mag. Ra: 275.695338 Dec: 55.661752
+W1-w2 > 0.4 W1 ~15.5mag W2~15mag. Ra: 275.695338 Dec: 55.661752. AAVSO or ZTF have not have managed to get this period in Vizier, both classify it as SR / LPV, but in IR the period is very clear, so it could be band related. 
