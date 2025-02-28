@@ -1,6 +1,6 @@
 # WISE L1b Folded Light Curves of Modified Catalogue of white dwarfs in Gaia EDR3 (Gentile+, 2021)
 
-# New version with enhanced periodogram and latest NEOWISE epochs will be released 2/2024.
+# New version with enhanced periodogram and latest NEOWISE epochs will be released 3/2025.
 
 This folder contains lombscargle analysis of 3637 folded infra red light curves from a modified white dwarf sample.
 
