@@ -1,19 +1,13 @@
-# WISE L1b Folded Light Curves of Modified Catalogue of white dwarfs in Gaia EDR3 (Gentile+, 2021)
+# WISE L1b variability Catalogue of white dwarfs in Gaia EDR3 (Gentile+, 2021)
 
-# New version with enhanced periodogram and latest NEOWISE epochs will be released 3/2025.
+# Latest version with enhanced periodogram and latest NEOWISE epochs is now released (Public_main_catalog.csv)
 
-This folder contains lombscargle analysis of 3637 folded infra red light curves from a modified white dwarf sample.
-
-## Source Selection
-The white dwarf candidates were sourced from the **Gaia DR2** white dwarf candidate catalog (Gentile Fusillo+, 2019) using the following criteria:
-
-- **Parallax** >= 1
-- **Proper Motion (PM)** >= 0 mas
-- **White Dwarf Probability** >= 50%
+This folder contains lombscargle analysis of ~3637~ 4478 white dwarfs cross matched between CATWISE2020 and Catalogue of white dwarfs in Gaia EDR3.
+:
 
 ## Matching Procedure
 1. **CatWISE Catalog Match:**
-   - **Search Radius**: 2 arcseconds (2016 Epoch)
+   - **Search Radius**: 3 arcseconds (2015.5 Epoch)
    - **Filters**:
      ```sql
      (cc_flags NOT LIKE 'D___')
