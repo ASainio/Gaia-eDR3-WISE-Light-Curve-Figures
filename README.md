@@ -31,15 +31,15 @@ This folder contains lombscargle analysis of ~3637~ 4478 white dwarfs cross matc
 ### Position Filtering
 - Each source with GAIA PM < 50mas are included within 1" radius.
 - Sources within > 1 - 3" are included if CATWISE2020 PM vector behaves well with GAIA PM direction.
-- 
-- **Top Panels**: Raw data is plotted without additional filters.
+
 
 ### Other Filtering:
 - Sources with < 100 datapoints after filtering were discarded. 
 - Data was sigma clipped for periodogram with parameters: upper = 3, lower = 3.
+- If quality filters return less than 100 datapoints, settings are lowered for given band. This will be indicated as quality flag B in catalog.
 
 ### Periodogram Settings
-  - Periods that were close to median WISE observation cadence recalculated we're removed to avoid false positives. However aliasing might still occure in some cases.
+  - Periods that were close to median WISE observation cadence were removed to avoid false positives. However aliasing might still occure in some cases.
   - Known aliasing periods remaining are: 0.028
   - Aliasing fractions are indicated with gray triangles in the **Best Period** figure.
   - Minimum period: 0.5 hours
@@ -51,4 +51,5 @@ This work benefits from:
 - VizieR Online Data Catalog: Catalogue of white dwarfs in Gaia EDR3 (Gentile+, 2021)
 - ASTROPY
 - WISEVIEW
-- 
+- CATWISE2020 Catalog
+- IRSA Archive
