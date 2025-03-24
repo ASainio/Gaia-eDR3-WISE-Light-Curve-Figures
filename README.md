@@ -6,8 +6,8 @@ This folder contains lombscargle analysis of ~3637~ 4478 white dwarfs cross matc
 :
 
 ## Source Matching:
-- Each source with GAIA PM < 50mas are included within 1" radius.
-- Sources within between 1 - 3" are included if CATWISE2020 PM vector behaves well with GAIA PM direction.
+- Sources with GAIA PM < 50mas are included within 1" radius from GAIA position.
+- Sources between 1 - 3" are included if CATWISE2020 PM vector behaves well with GAIA PM direction.
 
 
 ### Filtering
@@ -29,17 +29,14 @@ This folder contains lombscargle analysis of ~3637~ 4478 white dwarfs cross matc
          OR
          (w2mpro < 15.5 AND w2snr > 30)
      )
-
-- Each source with GAIA PM < 50mas are included within 1" radius.
-- Sources within > 1 - 3" are included if CATWISE2020 PM vector behaves well with GAIA PM direction.
-- Sources with < 100 datapoints after filtering were discarded. 
-- Data was sigma clipped for periodogram with parameters: upper = 3, lower = 3.
+     
 - If quality filters return less than 100 datapoints, settings are lowered for given band. This will be indicated as quality flag B in catalog.
+- Sources with < 100 datapoints after filtering were discarded.
+- Data was sigma clipped for periodogram with parameters: upper = 3, lower = 3.
 
 ### Periodogram Settings
-  - Periods that were close to median WISE observation cadence were removed to avoid false positives. However aliasing might still occure in some cases.
-  - Known aliasing periods remaining are: 0.028
-  - Aliasing fractions are indicated with gray triangles in the **Best Period** figure.
+  - Periods that were close to median WISE observation cadence were removed and recalculated to avoid false positives. However aliasing might still occure in some cases.
+  - Possible aliasing fractions are indicated with gray triangles in the **Best Period** figure.
   - Minimum period: 0.5 hours
   - The periodogram is run twice for improved accuracy.
   - Each band is analyzed independently.
