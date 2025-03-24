@@ -10,26 +10,6 @@ This folder contains lombscargle analysis of ~3637~ 4478 white dwarfs cross matc
 - Sources within between 1 - 3" are included if CATWISE2020 PM vector behaves well with GAIA PM direction.
 
 
-1. **CatWISE Catalog Match:**
-   - **Search Radius**: 3 arcseconds (2015.5 Epoch)
-   - **Filters**:
-     ```sql
-     (cc_flags NOT LIKE 'D___')
-     AND (cc_flags NOT LIKE 'H___')
-     AND (cc_flags NOT LIKE 'O___')
-     AND (cc_flags NOT LIKE 'P___')
-     AND (cc_flags NOT LIKE '_D__')
-     AND (cc_flags NOT LIKE '_H__')
-     AND (cc_flags NOT LIKE '_O__')
-     AND (cc_flags NOT LIKE '_P__')
-     AND ab_flags = '00'
-     AND (
-         (w1mpro < 15.5 AND w1snr > 30)
-         OR
-         (w2mpro < 15.5 AND w2snr > 30)
-     )
-     ```
-
 ### Filtering
  **CatWISE2020 cross matching:**
    - **Search Radius**: 3 arcseconds (2015.5 Epoch)
