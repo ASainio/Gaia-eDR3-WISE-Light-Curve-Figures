@@ -5,7 +5,11 @@
 This folder contains lombscargle analysis of ~3637~ 4478 white dwarfs cross matched between CATWISE2020 and Catalogue of white dwarfs in Gaia EDR3.
 :
 
-## Matching Procedure
+## Source Matching:
+- Each source with GAIA PM < 50mas are included within 1" radius.
+- Sources within between 1 - 3" are included if CATWISE2020 PM vector behaves well with GAIA PM direction.
+
+
 1. **CatWISE Catalog Match:**
    - **Search Radius**: 3 arcseconds (2015.5 Epoch)
    - **Filters**:
@@ -26,14 +30,28 @@ This folder contains lombscargle analysis of ~3637~ 4478 white dwarfs cross matc
      )
      ```
 
-## Filtering and Periodogram Analysis
+### Filtering
+ **CatWISE2020 cross matching:**
+   - **Search Radius**: 3 arcseconds (2015.5 Epoch)
+   - **Filters**:
+     ```sql
+     (cc_flags NOT LIKE 'D___')
+     AND (cc_flags NOT LIKE 'H___')
+     AND (cc_flags NOT LIKE 'O___')
+     AND (cc_flags NOT LIKE 'P___')
+     AND (cc_flags NOT LIKE '_D__')
+     AND (cc_flags NOT LIKE '_H__')
+     AND (cc_flags NOT LIKE '_O__')
+     AND (cc_flags NOT LIKE '_P__')
+     AND ab_flags = '00'
+     AND (
+         (w1mpro < 15.5 AND w1snr > 30)
+         OR
+         (w2mpro < 15.5 AND w2snr > 30)
+     )
 
-### Position Filtering
 - Each source with GAIA PM < 50mas are included within 1" radius.
 - Sources within > 1 - 3" are included if CATWISE2020 PM vector behaves well with GAIA PM direction.
-
-
-### Other Filtering:
 - Sources with < 100 datapoints after filtering were discarded. 
 - Data was sigma clipped for periodogram with parameters: upper = 3, lower = 3.
 - If quality filters return less than 100 datapoints, settings are lowered for given band. This will be indicated as quality flag B in catalog.
