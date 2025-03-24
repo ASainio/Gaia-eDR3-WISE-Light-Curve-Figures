@@ -20,31 +20,35 @@ This folder contains lombscargle analysis of ~3637~ 4478 white dwarfs cross matc
      AND (cc_flags NOT LIKE '_P__')
      AND ab_flags = '00'
      AND (
-         (w1mpro < 15 AND w1snr > 30)
+         (w1mpro < 15.5 AND w1snr > 30)
          OR
-         (w2mpro < 15 AND w2snr > 30)
+         (w2mpro < 15.5 AND w2snr > 30)
      )
      ```
 
 ## Filtering and Periodogram Analysis
 
 ### Position Filtering
-- Each data point is cross-checked against the source’s expected position based on Gaia proper motions, with generous 1 arcsecond radius.
+- Each source with GAIA PM < 50mas are included within 1" radius.
+- Sources within > 1 - 3" are included if CATWISE2020 PM vector behaves well with GAIA PM direction.
+- 
 - **Top Panels**: Raw data is plotted without additional filters.
 
-### Sigma Clipping for Periodogram
-- Sources with < 50 datapoints after filtering were discarded. 
+### Other Filtering:
+- Sources with < 100 datapoints after filtering were discarded. 
 - Data was sigma clipped for periodogram with parameters: upper = 3, lower = 3.
 
 ### Periodogram Settings
-- **Period Adjustments**:
-  - If the periods close to the WISE interval (~0.066 days) or its fractions were recalculated to avoid aliasing. However aliasing might still occure in some cases.
+  - Periods that were close to median WISE observation cadence recalculated we're removed to avoid false positives. However aliasing might still occure in some cases.
+  - Known aliasing periods remaining are: 0.028
   - Aliasing fractions are indicated with gray triangles in the **Best Period** figure.
-- **Period Range**:
   - Minimum period: 0.5 hours
-  - Maximum period: 7 days
-- **Execution**: The periodogram is run twice for improved accuracy.
-- **Separate Solutions**: Each band is analyzed independently.
+  - The periodogram is run twice for improved accuracy.
+  - Each band is analyzed independently.
 
 
-This work benefits from VizieR Online Data Catalog: Catalogue of white dwarfs in Gaia EDR3 (Gentile+, 2021)
+This work benefits from:
+- VizieR Online Data Catalog: Catalogue of white dwarfs in Gaia EDR3 (Gentile+, 2021)
+- ASTROPY
+- WISEVIEW
+- 
