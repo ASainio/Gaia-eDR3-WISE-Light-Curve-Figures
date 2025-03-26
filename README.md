@@ -1,4 +1,4 @@
-# WISE L1b variability Catalogue of white dwarfs in Gaia EDR3 (Gentile+, 2021)
+# WISE L1b variability Catalogue of white dwarfs in Gaia EDR3
 
 # Latest version with enhanced periodogram and latest NEOWISE epochs is now released (Public_main_catalog.csv)
 
